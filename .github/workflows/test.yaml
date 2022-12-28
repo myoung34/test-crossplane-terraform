@@ -1,0 +1,30 @@
+on: [push]
+jobs:
+  checkov-job:
+    runs-on: ubuntu-latest
+    name: checkov-action
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@master
+
+      - name: Run Checkov terraform action
+        id: checkov-tf
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: terraform/
+          skip_check: CKV*
+          quiet: true
+          framework: terraform
+          download_external_modules: true
+          external_checks_dirs: rules/tf
+
+      - name: Run Checkov kubernetes action
+        id: checkov-k8s
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: .
+          skip_check: CKV*
+          quiet: true
+          framework: kubernetes
+          download_external_modules: true
+          external_checks_dirs: rules/k8s

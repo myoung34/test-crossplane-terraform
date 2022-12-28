@@ -1,3 +1,4 @@
 *.sw[o-p]
 charts/
 creds.conf
+__pycache__
