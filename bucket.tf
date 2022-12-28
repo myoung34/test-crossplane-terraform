@@ -10,7 +10,7 @@ terraform {
   }
 }
 
-resource "aws_s3_bucket" "octopi" {
+resource "aws_s3_bucket" "sometest" {
   bucket = "us-marcyoung-sometest"
   acl    = "private"
 
