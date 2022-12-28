@@ -5,6 +5,7 @@ namespace: crossplane-system
 resources:
   - providerconfig.yaml
   - s3.yaml
+  - workspace.yaml
 
 helmCharts:
 - name: crossplane

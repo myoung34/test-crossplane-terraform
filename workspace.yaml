@@ -1,0 +1,12 @@
+apiVersion: tf.upbound.io/v1beta1
+kind: Workspace
+metadata:
+  name: relative-path-test
+  namespace: crossplane-system
+spec:
+  forProvider:
+    module: git::https://github.com/myoung34/test-crossplane-terraform.git
+    source: Remote
+    entrypoint: terraform
+  providerConfigRef:
+    name: terraform-provider

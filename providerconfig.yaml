@@ -22,7 +22,7 @@ spec:
     secretRef:
       namespace: crossplane-system
       name: aws-creds
-      key: credentials
+      key: creds   
   - filename: .git-credentials
     source: Secret
     secretRef:
@@ -40,5 +40,7 @@ spec:
         bucket = "us-marcyoung-crossplane"
         key    = "terraform.tfstate"
         region = "us-east-1"
+        shared_credentials_file = "aws-creds.ini"
+        workspace_key_prefix = "crossplane-test"
       }
     }
