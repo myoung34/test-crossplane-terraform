@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: crossplane-system
+
+resources:
+  - providerconfig.yaml
+  - s3.yaml
+
+helmCharts:
+- name: crossplane
+  includeCRDs: true
+  namespace: crossplane-system
+  releaseName: crossplane
+  version:  1.10.1
+  repo: https://charts.crossplane.io/stable
+  valuesInline:
+    provider:
+      packages:
+        - "xpkg.upbound.io/crossplane-contrib/provider-aws:v0.33.0"
+        - "xpkg.upbound.io/upbound/provider-terraform:v0.3.0"

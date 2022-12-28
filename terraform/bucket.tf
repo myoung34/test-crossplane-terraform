@@ -1,15 +1,3 @@
-provider "aws" {
-    region = "us-east-1"
-}
-
-terraform {
-  backend "s3" {
-    bucket = "us-marcyoung-crossplane"
-    key    = "terraform.tfstate"
-    region = "us-east-1"
-  }
-}
-
 resource "aws_s3_bucket" "sometest" {
   bucket = "us-marcyoung-sometest"
   acl    = "private"
