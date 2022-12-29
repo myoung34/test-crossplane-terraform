@@ -7,7 +7,7 @@ This is my own test for crossplane with AWS and terraform (AWS)
 2) Create opaque secrets for git and the aws user
 3) Set up crossplane, use bare aws provider to create a state bucket for terraform
 4) Set up the terraform provider to use `terraform/*.tf` in a repo with previous bucket for state
-5) TODO: Figure out how to lint/gate at PR: inline tf (`spec.forProvider.source: inline`), normal TF (`terraform/*.tf`), and `Kind: Bucket` for `s3.aws.crossplane.io` stuff
+5) Issue a PR with TF to `terraform/` or a change to any manifest (including inline TF via crossplane) and see checks happen
 
 # Pre-reqs
 
