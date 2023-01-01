@@ -31,15 +31,6 @@ class WorkspaceInline(BaseK8Check):
             supported_entities=supported_kind
         )
 
-    #def run(
-    #    scanned_file,
-    #    entity_configuration,
-    #    entity_name,
-    #    entity_type,
-    #    skip_info
-    #):
-    #    raise("fuck")
-
 
     def scan_spec_conf(self, conf):
         reports = []
